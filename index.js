@@ -1,16 +1,11 @@
 let inquirer = require('inquirer');
-
 let fs = require("fs");
-
 let Manager = require("./lib/Manager");
-
 let Engineer = require("./lib/Engineer");
-
 let Intern = require("./lib/Intern");
-
 let employeeArray = [];
 
-function newManager() {
+function init() {
 
     inquirer.prompt([
 
@@ -403,15 +398,11 @@ function writeHTML() {
 
     fs.writeFile("./output/team.html", generateHTML(), function (err) {
 
-
-
         if (err) {
 
             return console.log(err);
 
         }
-
-
 
         console.log("Success!");
 
@@ -421,4 +412,4 @@ function writeHTML() {
 
 };
 
-newManager();
+init();
